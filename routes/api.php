@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('api')->get('/users', function(Request $request) {
     return \App\User::all();
 });
+
+Route::name('api.')->namespace('Api')->group(function () {
+    Route::apiResource('modpacks', 'ModpacksController');
+});

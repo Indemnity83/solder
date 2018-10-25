@@ -17,6 +17,12 @@
                     >
                         Users
                     </router-link>
+                    <router-link :to="{ name: 'modpacks.index' }"
+                                 class="nav-item nav-link"
+                                 active-class="active"
+                    >
+                        Modpacks
+                    </router-link>
                 </nav>
             </div>
 
