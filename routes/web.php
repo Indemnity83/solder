@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::view('/', 'welcome');
+Route::view('{any}', 'app')
+    ->where('any', '^(?!api).*$')
+    ->middleware(['auth', 'verified'])
+    ->name('home');
