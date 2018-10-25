@@ -11,6 +11,12 @@
                     >
                         Home
                     </router-link>
+                    <router-link :to="{ name: 'users.index' }"
+                                 class="nav-item nav-link"
+                                 active-class="active"
+                    >
+                        Users
+                    </router-link>
                 </nav>
             </div>
 

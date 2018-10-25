@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { Model } from 'vue-api-query'
 
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
@@ -10,3 +11,8 @@ let token = document.head.querySelector('meta[name="csrf-token"]');
 
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+
+/**
+ * Inject global axios instance as http client to Model
+ */
+Model.$http = axios;
