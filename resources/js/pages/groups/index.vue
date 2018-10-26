@@ -54,7 +54,7 @@
 
         data() {
             return {
-                modpacks: [],
+                modpacks: {},
                 modpackForm: new Modpack({}),
             }
         },
