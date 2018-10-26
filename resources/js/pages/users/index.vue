@@ -44,7 +44,6 @@
         data() {
             return {
                 users: [],
-                userForm: new User({}),
             }
         },
 
@@ -55,12 +54,6 @@
         },
 
         methods: {
-            async postUserForm() {
-                let response = await this.userForm.save();
-                this.users.push(response);
-                this.userForm = new User({});
-            },
-
             async destroy(user) {
                 let response = await user.delete();
                 this.users.splice(user, 1)

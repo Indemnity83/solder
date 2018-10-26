@@ -1,6 +1,6 @@
 <template>
     <div class="card mb-4">
-        <div class="card-header">Edit Group</div>
+        <div class="card-header">Create Group</div>
 
         <div class="card-body">
 
@@ -13,10 +13,10 @@
                 </div>
             </div>
 
-            <div class="form-group row">
+            <div class="form-user row">
                 <div class="offset-sm-2 col-sm-10">
-                    <button type="submit" class="btn btn-primary" @click="save(false)">Update & Continue Editing</button>
-                    <button type="submit" class="btn btn-primary" @click="save(true)">Update Group</button>
+                    <button type="submit" class="btn btn-primary" @click="create(false)">Create & Add Another</button>
+                    <button type="submit" class="btn btn-primary" @click="create(true)">Create Group</button>
                 </div>
             </div>
 
@@ -28,9 +28,7 @@
     import Group from '../../models/Group'
 
     export default {
-        name: "groups-show",
-
-        props: ['groupId'],
+        name: "groups-create",
 
         data() {
             return {
@@ -38,13 +36,10 @@
             }
         },
 
-        async mounted() {
-            this.group = await Group.find(this.groupId)
-        },
-
         methods: {
-            async save(redirect) {
-                this.group = await this.group.save();
+            async create(redirect = true) {
+                await this.group.save();
+                this.group = new Group({});
 
                 if(redirect) {
                     this.$router.push({name: 'groups.show', params: {groupId: this.group.id}})

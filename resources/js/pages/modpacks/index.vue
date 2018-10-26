@@ -1,26 +1,10 @@
 <template>
-    <div>
-        <div class="card mb-4">
-            <div class="card-header">Create Modpack</div>
-
-            <div class="card-body">
-
-                    <div class="form-group row">
-                        <label for="name" class="col-sm-2 col-form-label">Name</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="name"
-                                   v-model="modpackForm.name"
-                            >
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <div class="offset-sm-2 col-sm-10">
-                            <button type="submit" class="btn btn-primary" @click="postModpackForm">Add</button>
-                        </div>
-                    </div>
-
-            </div>
+    <div class="card mb-4">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h3 class="mb-0">Modpacks</h3>
+            <router-link :to="{ name: 'modpacks.create' }" class="btn btn-primary">
+                Create Modpack
+            </router-link>
         </div>
 
         <ul class="list-group">
@@ -55,7 +39,6 @@
         data() {
             return {
                 modpacks: [],
-                modpackForm: new Modpack({}),
             }
         },
 
@@ -66,12 +49,6 @@
         },
 
         methods: {
-            async postModpackForm() {
-                let response = await this.modpackForm.save();
-                this.modpacks.push(response);
-                this.modpackForm = new Modpack({});
-            },
-
             async destroy(modpack) {
                 let response = await modpack.delete();
                 this.modpacks.splice(modpack, 1)
