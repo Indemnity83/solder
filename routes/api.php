@@ -19,4 +19,5 @@ Route::middleware('api')->get('/users', function(Request $request) {
 
 Route::name('api.')->namespace('Api')->group(function () {
     Route::apiResource('modpacks', 'ModpacksController');
+    Route::apiResource('groups', 'GroupsController');
 });

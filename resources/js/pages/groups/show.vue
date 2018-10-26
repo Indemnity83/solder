@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="card mb-4">
-            <div class="card-header">{{ modpack.name }}</div>
+            <div class="card-header">{{ group.name }}</div>
 
             <div class="card-body">
                 &nbsp;
@@ -11,21 +11,21 @@
 </template>
 
 <script>
-    import Modpack from '../../models/Modpack'
+    import Group from '../../models/Group'
 
     export default {
-        name: "modpacks-show",
+        name: "groups-show",
 
-        props: ['modpackId'],
+        props: ['groupId'],
 
         data() {
             return {
-                modpack: {},
+                group: {},
             }
         },
 
         async mounted() {
-            this.modpack = await Modpack.find(this.modpackId)
+            this.group = await Group.find(this.groupId)
         }
     }
 </script>
