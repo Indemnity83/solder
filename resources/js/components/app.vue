@@ -17,12 +17,6 @@
                     >
                         Users
                     </router-link>
-                    <router-link :to="{ name: 'groups.index' }"
-                                 class="nav-item nav-link"
-                                 active-class="active"
-                    >
-                        Groups
-                    </router-link>
                     <router-link :to="{ name: 'modpacks.index' }"
                                  class="nav-item nav-link"
                                  active-class="active"
