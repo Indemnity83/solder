@@ -24,7 +24,7 @@
         </div>
 
         <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between" v-for="modpack in modpacks" :key="modpack.id">
+            <li class="list-group-item d-flex justify-content-between align-items-center" v-for="modpack in modpacks" :key="modpack.id">
                 <div>
                     {{ modpack.name }}
                 </div>
