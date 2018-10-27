@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class RolesAndPermissions extends Seeder
 {
@@ -20,7 +20,7 @@ class RolesAndPermissions extends Seeder
      * an 'admin' role will also be created.
      */
     private $roles = [
-        'user'
+        'user',
     ];
 
     /**
@@ -36,28 +36,28 @@ class RolesAndPermissions extends Seeder
     }
 
     /**
-     * Add roles to the system
+     * Add roles to the system.
      */
     private function createRoles()
     {
-        foreach($this->roles as $role) {
+        foreach ($this->roles as $role) {
             Role::create(['name' => $role]);
         }
     }
 
     /**
-     * Add permissions to the system
+     * Add permissions to the system.
      */
     private function createPermissions()
     {
-        foreach($this->permissions as $permission) {
+        foreach ($this->permissions as $permission) {
             echo $permission;
             Permission::create(['name' => $permission]);
         }
     }
 
     /**
-     * Create a special admin role and grant it all permissions
+     * Create a special admin role and grant it all permissions.
      */
     private function createAdmin()
     {

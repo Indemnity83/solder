@@ -2,11 +2,11 @@
 
 namespace App\Console\Commands;
 
-use App\Notifications\UserCreated;
 use App\User;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Hash;
+use App\Notifications\UserCreated;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Hash;
 
 class CreateUser extends Command
 {
@@ -50,11 +50,13 @@ class CreateUser extends Command
 
         if ($this->userExists($email)) {
             $this->error("A user with email '{$email}' already exists.");
+
             return;
         }
 
-        if (!$this->roleExists($role)) {
+        if (! $this->roleExists($role)) {
             $this->error("A role with name '{$role}' could not be found.");
+
             return;
         }
 
