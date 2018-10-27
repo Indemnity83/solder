@@ -13,6 +13,21 @@
                     <div class="w-25">Email</div>
                     <div class="w-75">{{ user.email }}</div>
                 </li>
+
+                <li class="list-group-item d-flex">
+                    <div class="w-25">Email Verified</div>
+                    <div class="w-75">{{ user.email_verified_at | formatDate }}</div>
+                </li>
+
+                <li class="list-group-item d-flex">
+                    <div class="w-25">Created</div>
+                    <div class="w-75">{{ user.created_at | formatDate }}</div>
+                </li>
+
+                <li class="list-group-item d-flex">
+                    <div class="w-25">Updated</div>
+                    <div class="w-75">{{ user.updated_at | formatDate }}</div>
+                </li>
             </ul>
         </div>
 

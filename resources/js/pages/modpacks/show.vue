@@ -8,6 +8,16 @@
                     <div class="w-25">Name</div>
                     <div class="w-75">{{ modpack.name }}</div>
                 </li>
+
+                <li class="list-group-item d-flex">
+                    <div class="w-25">Created</div>
+                    <div class="w-75">{{ modpack.created_at | formatDate }}</div>
+                </li>
+
+                <li class="list-group-item d-flex">
+                    <div class="w-25">Updated</div>
+                    <div class="w-75">{{ modpack.updated_at | formatDate }}</div>
+                </li>
             </ul>
         </div>
 
