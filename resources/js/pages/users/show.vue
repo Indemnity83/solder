@@ -1,6 +1,11 @@
 <template>
     <div class="card mb-4">
-        <div class="card-header">User Details</div>
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <span>User Details</span>
+            <router-link :to="{ name: 'users.edit', params: { userId: user.id }}">
+                Edit User
+            </router-link>
+        </div>
 
         <div class="card-body">
             <ul class="list-group list-group-flush">

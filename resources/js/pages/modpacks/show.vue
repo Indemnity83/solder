@@ -1,6 +1,11 @@
 <template>
     <div class="card mb-4">
-        <div class="card-header">Modpack Details</div>
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <span>Modpack Details</span>
+            <router-link :to="{ name: 'modpacks.edit', params: { modpackId: modpack.id }}">
+                Edit Modpack
+            </router-link>
+        </div>
 
         <div class="card-body">
             <ul class="list-group list-group-flush">
