@@ -2,9 +2,9 @@
     <div>
         <div class="card mb-4">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <h3 class="mb-0">Users</h3>
-                <router-link :to="{ name: 'users.create' }" class="btn btn-primary">
-                    Create User
+                <span>Users</span>
+                <router-link :to="{ name: 'users.create' }" class="action-link">
+                    Create New User
                 </router-link>
             </div>
 
@@ -15,16 +15,16 @@
                     </div>
                     <div class="btn-group btn-group-sm" role="user" aria-label="Basic example">
                         <router-link :to="{ name: 'users.show', params: { userId: user.id } }"
-                                     class="btn btn-outline-primary"
+                                     class="btn btn-link"
                         >
                             View
                         </router-link>
                         <router-link :to="{ name: 'users.edit', params: { userId: user.id } }"
-                                     class="btn btn-outline-primary"
+                                     class="btn btn-link"
                         >
                             Edit
                         </router-link>
-                        <button type="button" @click="destroy(user)" class="btn btn-outline-primary">Delete</button>
+                        <button type="button" @click="destroy(user)" class="btn btn-link text-danger">Delete</button>
                     </div>
                 </li>
             </ul>

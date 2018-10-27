@@ -1,9 +1,9 @@
 <template>
     <div class="card mb-4">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <h3 class="mb-0">Modpacks</h3>
-            <router-link :to="{ name: 'modpacks.create' }" class="btn btn-primary">
-                Create Modpack
+            <span>Modpacks</span>
+            <router-link :to="{ name: 'modpacks.create' }" class="action-link">
+                Create New Modpack
             </router-link>
         </div>
 
@@ -14,16 +14,16 @@
                 </div>
                 <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                     <router-link :to="{ name: 'modpacks.show', params: { modpackId: modpack.id } }"
-                                 class="btn btn-outline-primary"
+                                 class="btn btn-link"
                     >
                         View
                     </router-link>
                     <router-link :to="{ name: 'modpacks.edit', params: { modpackId: modpack.id } }"
-                                 class="btn btn-outline-primary"
+                                 class="btn btn-link"
                     >
                         Edit
                     </router-link>
-                    <button type="button" @click="destroy(modpack)" class="btn btn-outline-primary">Delete</button>
+                    <button type="button" @click="destroy(modpack)" class="btn btn-link text-danger">Delete</button>
                 </div>
             </li>
         </ul>
