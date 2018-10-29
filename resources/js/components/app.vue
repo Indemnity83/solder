@@ -46,7 +46,7 @@
                                 >
                                     Profile
                                 </router-link>
-                                <a class="dropdown-item" href="/logout">Logout</a>
+                                <a class="dropdown-item" @click="logout">Logout</a>
                             </div>
                         </li>
                     </div>
@@ -73,6 +73,14 @@
 
 <script>
     export default {
-        name: "app"
+        name: "app",
+
+        methods: {
+            logout() {
+                axios.post('/logout').then(function (response) {
+                    window.location.replace('/');
+                })
+            }
+        }
     }
 </script>
