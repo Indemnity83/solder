@@ -14,7 +14,6 @@
 Auth::routes(['verify' => true]);
 
 Route::view('/', 'welcome');
-Route::view('/profile', 'profile.show')->name('profile');
 Route::view('{any}', 'app')
     ->where('any', '^(?!api).*$')
     ->middleware(['auth', 'verified'])

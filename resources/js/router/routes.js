@@ -1,5 +1,6 @@
 export default [
     { path: '/home', name: 'home', component: require('../pages/home.vue') },
+    { path: '/profile', name: 'profile', component: require('../pages/auth/profile.vue') },
     { path: '/users', name: 'users.index', component: require('../pages/users/index.vue') },
     { path: '/users/create', name: 'users.create', component: require('../pages/users/create.vue') },
     { path: '/users/:userId', name: 'users.show', component: require('../pages/users/show.vue'), props: true },
