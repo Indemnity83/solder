@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b7706337509b2e1c9b6897c1c5a036a9",
+    "content-hash": "9fba4aedf5918ef3e04dc3ed53da4246",
     "packages": [
         {
             "name": "defuse/php-encryption",
@@ -2010,6 +2010,52 @@
                 "uuid"
             ],
             "time": "2018-07-19T23:38:55+00:00"
+        },
+        {
+            "name": "solder/framework",
+            "version": "dev-develop",
+            "dist": {
+                "type": "path",
+                "url": "./packages/framework",
+                "reference": "4ee506184ebda420d04d22c4a08c677534e23a28",
+                "shasum": null
+            },
+            "require": {
+                "illuminate/database": "^5.7",
+                "illuminate/support": "^5.7",
+                "php": "^7.1",
+                "spatie/laravel-query-builder": "^1.11"
+            },
+            "require-dev": {
+                "larapack/dd": "^1.0",
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Solder\\Framework\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Solder\\Framework\\": "src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Solder\\Framework\\Tests\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "vendor/bin/phpunit"
+                ],
+                "test-coverage": [
+                    "vendor/bin/phpunit --coverage-html coverage"
+                ]
+            }
         },
         {
             "name": "spatie/laravel-permission",
@@ -5046,7 +5092,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "solder/framework": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

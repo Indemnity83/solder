@@ -10,6 +10,7 @@
         "laravel/framework": "5.7.*",
         "laravel/passport": "^7.0",
         "laravel/tinker": "^1.0",
+        "solder/framework": "dev-develop",
         "spatie/laravel-permission": "^2.23",
         "spatie/laravel-query-builder": "^1.11"
     },
@@ -21,6 +22,12 @@
         "nunomaduro/collision": "^2.0",
         "phpunit/phpunit": "^7.0"
     },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./packages/framework"
+        }
+    ],
     "autoload": {
         "classmap": [
             "database/seeds",
